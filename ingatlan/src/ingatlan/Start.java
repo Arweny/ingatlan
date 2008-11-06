@@ -35,6 +35,7 @@ public class Start {
 	private JPanel aboutContentPane = null;
 	private JLabel aboutVersionLabel = null;
 	private JMenu jMenu = null;
+	private JMenuItem jMenuItem = null;
 
 	/**
 	 * This method initializes jMenu
@@ -44,9 +45,30 @@ public class Start {
 	private JMenu getJMenu() {
 		if (jMenu == null) {
 			jMenu = new JMenu();
-			jMenu.setText("About");
+			jMenu.setText("Another Test");
+			jMenu.add(getJMenuItem());
 		}
 		return jMenu;
+	}
+
+	/**
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
+	 */
+	private JMenuItem getJMenuItem() {
+		if (jMenuItem == null) {
+			jMenuItem = new JMenuItem();
+			jMenuItem.setText("GoForIt");
+			jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+					JFrame at=new AnotherTest();
+					at.setVisible(true);
+				}
+			});
+		}
+		return jMenuItem;
 	}
 
 	/**
@@ -184,6 +206,8 @@ public class Start {
 			aboutMenuItem.setText("About");
 			aboutMenuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+
 					JDialog aboutDialog = getAboutDialog();
 					aboutDialog.pack();
 					Point loc = getJFrame().getLocation();
