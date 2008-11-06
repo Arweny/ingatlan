@@ -36,9 +36,9 @@ public class Start {
 	private JMenu jMenu = null;
 
 	/**
-	 * This method initializes jMenu	
-	 * 	
-	 * @return javax.swing.JMenu	
+	 * This method initializes jMenu
+	 *
+	 * @return javax.swing.JMenu
 	 */
 	private JMenu getJMenu() {
 		if (jMenu == null) {
@@ -63,7 +63,7 @@ public class Start {
 
 	/**
 	 * This method initializes jFrame
-	 * 
+	 *
 	 * @return javax.swing.JFrame
 	 */
 	private JFrame getJFrame() {
@@ -80,7 +80,7 @@ public class Start {
 
 	/**
 	 * This method initializes jContentPane
-	 * 
+	 *
 	 * @return javax.swing.JPanel
 	 */
 	private JPanel getJContentPane() {
@@ -92,9 +92,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jJMenuBar	
-	 * 	
-	 * @return javax.swing.JMenuBar	
+	 * This method initializes jJMenuBar
+	 *
+	 * @return javax.swing.JMenuBar
 	 */
 	private JMenuBar getJJMenuBar() {
 		if (jJMenuBar == null) {
@@ -108,9 +108,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenu	
-	 * 	
-	 * @return javax.swing.JMenu	
+	 * This method initializes jMenu
+	 *
+	 * @return javax.swing.JMenu
 	 */
 	private JMenu getFileMenu() {
 		if (fileMenu == null) {
@@ -123,9 +123,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenu	
-	 * 	
-	 * @return javax.swing.JMenu	
+	 * This method initializes jMenu
+	 *
+	 * @return javax.swing.JMenu
 	 */
 	private JMenu getEditMenu() {
 		if (editMenu == null) {
@@ -139,9 +139,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenu	
-	 * 	
-	 * @return javax.swing.JMenu	
+	 * This method initializes jMenu
+	 *
+	 * @return javax.swing.JMenu
 	 */
 	private JMenu getHelpMenu() {
 		if (helpMenu == null) {
@@ -153,14 +153,16 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getExitMenuItem() {
 		if (exitMenuItem == null) {
 			exitMenuItem = new JMenuItem();
 			exitMenuItem.setText("Exit");
+			exitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
+					Event.ALT_MASK, true));
 			exitMenuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					System.exit(0);
@@ -171,9 +173,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getAboutMenuItem() {
 		if (aboutMenuItem == null) {
@@ -194,8 +196,8 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes aboutDialog	
-	 * 	
+	 * This method initializes aboutDialog
+	 *
 	 * @return javax.swing.JDialog
 	 */
 	private JDialog getAboutDialog() {
@@ -209,7 +211,7 @@ public class Start {
 
 	/**
 	 * This method initializes aboutContentPane
-	 * 
+	 *
 	 * @return javax.swing.JPanel
 	 */
 	private JPanel getAboutContentPane() {
@@ -222,9 +224,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes aboutVersionLabel	
-	 * 	
-	 * @return javax.swing.JLabel	
+	 * This method initializes aboutVersionLabel
+	 *
+	 * @return javax.swing.JLabel
 	 */
 	private JLabel getAboutVersionLabel() {
 		if (aboutVersionLabel == null) {
@@ -236,9 +238,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getCutMenuItem() {
 		if (cutMenuItem == null) {
@@ -251,9 +253,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getCopyMenuItem() {
 		if (copyMenuItem == null) {
@@ -266,9 +268,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getPasteMenuItem() {
 		if (pasteMenuItem == null) {
@@ -281,9 +283,9 @@ public class Start {
 	}
 
 	/**
-	 * This method initializes jMenuItem	
-	 * 	
-	 * @return javax.swing.JMenuItem	
+	 * This method initializes jMenuItem
+	 *
+	 * @return javax.swing.JMenuItem
 	 */
 	private JMenuItem getSaveMenuItem() {
 		if (saveMenuItem == null) {
