@@ -1,3 +1,5 @@
+package ingatlan;
+
 import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
