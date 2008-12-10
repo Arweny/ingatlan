@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sun Nov 02 17:35:06 CET 2008
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=ingatlan_fat.jar
+manifest.mergeall=true
+manifest.mainclass=Start
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
