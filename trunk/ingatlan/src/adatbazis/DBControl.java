@@ -55,7 +55,7 @@ public void DBSaveIngatlan(Vector<String> field) throws Exception {
 		PreparedStatement prep = conn.prepareStatement("insert into ingatlan (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 		for (int i=1; i<field.size()/2; i++) {
-System.out.println("i=" + i);
+			System.out.println("i=" + i);
 			prep.setString(i, field.elementAt(i));
 			prep.setString(i+15, field.elementAt(i+15));
 		}
@@ -81,4 +81,50 @@ System.out.println("i=" + i);
 
 }
 
+
+	public void SaveData(Vector<String> field, String db_name) throws Exception {
+		System.out.println(field.toString());
+		//adat ellenorzes
+		if ( field.elementAt(1).equals("")) {
+			//ures az azonosito, uj adat
+			String query = "insert into "+ db_name +" (";
+			for (int j=0;  j<field.size()/2; j++) {
+
+				query.concat("?");
+			}
+			query.concat(") values (");
+			for (int j=0;  j<field.size()/2; j++) {
+
+				query.concat("?");
+			}
+			query.concat(")");
+			System.out.println(query);
+			PreparedStatement prep = conn.prepareStatement(query);
+
+			for (int i=1; i<field.size()/2; i++) {
+				System.out.println("i=" + i);
+				prep.setString(i, field.elementAt(i));
+				prep.setString(i+15, field.elementAt(i+15));
+			}
+			prep.addBatch();
+			conn.setAutoCommit(false);
+			prep.executeBatch();
+			conn.setAutoCommit(true);
+
+
+	/*
+			ResultSet rs = stat.executeQuery("SELECT last_insert_rowid() as id");
+			String id=rs.getString("id");
+			System.out.println("uj ingatlan id=" + id);
+			rs.close();
+	*/
+
+			//PreparedStatement p= conn.PreparedStatement();
+		} else {
+			//van mar azonosito, frissites
+			//PreparedStatement p= conn.PreparedStatement();
+		}
+
+
+	}
 }
