@@ -17,8 +17,18 @@ create table ingatlan (
 	szobak_szama tinyint unsigned not null,
 	maximalis_lako tinyint unsigned not null,
 	komfort_fokozat tinyint unsigned not null,
-	kiadhato date not null
+	kiadhato date not null,
+	statusz tinyint unsigned not null,
+	berleti_dij integer unsigned not null,
+	terulet integer unsigned not null,
+	futes tinyint unsigned not null,
+	klima tinyint unsigned not null,
+	butorozott tinyint unsigned not null,
+	belmagassag integer unsigned not null,
+	epites_eve integer unsigned not null,
+	allapot tinyint unsigned not null
 );
+
 
 
 
