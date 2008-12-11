@@ -16,6 +16,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JFrame;
 import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import java.awt.Rectangle;
+import javax.swing.JTable;
 
 public class Start {
 
@@ -36,6 +39,8 @@ public class Start {
 	private JLabel aboutVersionLabel = null;
 	private JMenu jMenu = null;
 	private JMenuItem jMenuItem = null;
+	private JScrollPane jScrollPane = null;
+	private JTable jTable = null;
 
 	/**
 	 * This method initializes jMenu
@@ -69,6 +74,33 @@ public class Start {
 			});
 		}
 		return jMenuItem;
+	}
+
+	/**
+	 * This method initializes jScrollPane
+	 *
+	 * @return javax.swing.JScrollPane
+	 */
+	private JScrollPane getJScrollPane() {
+		if (jScrollPane == null) {
+			jScrollPane = new JScrollPane();
+			jScrollPane.setBounds(new Rectangle(14, 7, 269, 130));
+			jScrollPane.setViewportView(getJTable());
+		}
+		return jScrollPane;
+	}
+
+	/**
+	 * This method initializes jTable
+	 *
+	 * @return javax.swing.JTable
+	 */
+	private JTable getJTable() {
+		if (jTable == null) {
+			jTable = new JTable();
+			jTable.setShowGrid(true);
+		}
+		return jTable;
 	}
 
 	/**
@@ -109,7 +141,8 @@ public class Start {
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
-			jContentPane.setLayout(new BorderLayout());
+			jContentPane.setLayout(null);
+			jContentPane.add(getJScrollPane(), null);
 		}
 		return jContentPane;
 	}
