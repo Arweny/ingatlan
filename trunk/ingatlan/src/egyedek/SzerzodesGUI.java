@@ -73,7 +73,7 @@ public class SzerzodesGUI extends JFrame {
 	private void initialize() {
 		this.setSize(450, 450);
 		this.setContentPane(getJContentPane());
-		this.setTitle("Szerződések");
+		this.setTitle("Szerződés");
 
 		try {
 			dbc = new DBControl();

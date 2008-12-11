@@ -17,7 +17,7 @@ import javax.swing.JDialog;
 import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
 
-public class SzerzodesGUI extends JFrame {
+public class UgyfelGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel jContentPane = null;  //  @jve:decl-index=0:visual-constraint="10,10"
@@ -54,7 +54,7 @@ public class SzerzodesGUI extends JFrame {
 	/**
 	 * This is the default constructor
 	 */
-	public SzerzodesGUI() {
+	public UgyfelGUI() {
 		super();
 		initialize();
 	}
@@ -67,7 +67,7 @@ public class SzerzodesGUI extends JFrame {
 	private void initialize() {
 		this.setSize(450, 450);
 		this.setContentPane(getJContentPane());
-		this.setTitle("Szerződések");
+		this.setTitle("Ügyfél adatai");
 
 		try {
 			dbc = new DBControl();
