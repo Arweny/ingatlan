@@ -87,17 +87,20 @@ public void DBSaveIngatlan(Vector<String> field) throws Exception {
 		//adat ellenorzes
 		if ( field.elementAt(1).equals("")) {
 			//ures az azonosito, uj adat
-			String query = "insert into "+ db_name +" (";
+			String query = "";
+			StringBuffer sb = new StringBuffer();
+			sb.append("insert into "+ db_name +" (");
 			for (int j=0;  j<field.size()/2; j++) {
-
-				query.concat("?");
+				if (j > 0) sb.append(",");
+				sb.append("?");
 			}
-			query.concat(") values (");
-			for (int j=0;  j<field.size()/2; j++) {
-
-				query.concat("?");
+			sb.append(") values (");
+			for (int k=0;  k<field.size()/2; k++) {
+				if (k > 0) sb.append(",");
+				sb.append("?");
 			}
-			query.concat(")");
+			sb.append(")");
+			query = sb.toString();
 			System.out.println(query);
 			PreparedStatement prep = conn.prepareStatement(query);
 
@@ -126,5 +129,16 @@ public void DBSaveIngatlan(Vector<String> field) throws Exception {
 		}
 
 
+	}
+
+
+	public ResultSet getAzonosito(String db_name) throws Exception {
+
+		System.out.println("database: " + db_name);
+
+		Statement stmnt = conn.createStatement();
+		ResultSet rs = stmnt.executeQuery("select * from " + db_name);
+
+		return rs;
 	}
 }
