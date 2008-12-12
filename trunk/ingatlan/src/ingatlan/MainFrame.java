@@ -10,8 +10,10 @@ import javax.swing.JMenu;
 import javax.swing.JDialog;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
+import javax.swing.JTable;
 
-
+import egyedek.*;
+import adatbazis.*;
 
 /**
  * @author zmaros
@@ -40,6 +42,7 @@ public class MainFrame extends JFrame {
 	private JPanel jContentPane1 = null;
 	private JInternalFrame jInternalFrame = null;
 	private JPanel jContentPane2 = null;
+	private JTable jTable = null;
 	/**
 	 * This method initializes mainMenu
 	 *
@@ -85,6 +88,13 @@ public class MainFrame extends JFrame {
 		if (addIngatlanok == null) {
 			addIngatlanok = new JMenuItem();
 			addIngatlanok.setText("Hozzáadás");
+			addIngatlanok.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+					JFrame ingatlan = new IngatlanGUI();
+					ingatlan.setVisible(true);
+				}
+			});
 		}
 
 		return addIngatlanok;
@@ -152,6 +162,8 @@ public class MainFrame extends JFrame {
 			jMenuItem.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+					JFrame ugyfel = new UgyfelGUI();
+					ugyfel.setVisible(true);
 				}
 			});
 		}
@@ -210,6 +222,13 @@ public class MainFrame extends JFrame {
 		if (jMenuItem4 == null) {
 			jMenuItem4 = new JMenuItem();
 			jMenuItem4.setText("Hozzáadás");
+			jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+					JFrame szerzodes = new SzerzodesGUI();
+					szerzodes.setVisible(true);
+				}
+			});
 		}
 		return jMenuItem4;
 	}
@@ -270,6 +289,8 @@ public class MainFrame extends JFrame {
 			jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+					JDialog about = getJDialogNevjegy();
+					about.setVisible(true);
 				}
 			});
 		}
@@ -340,6 +361,19 @@ public class MainFrame extends JFrame {
 
 
 	/**
+	 * This method initializes jTable
+	 *
+	 * @return javax.swing.JTable
+	 */
+	private JTable getJTable() {
+		if (jTable == null) {
+			jTable = new JTable();
+		}
+		return jTable;
+	}
+
+
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -369,7 +403,7 @@ public class MainFrame extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		this.setSize(800,600);
+		this.setSize(457, 298);
 		this.setJMenuBar(getMainMenu());
 		this.setContentPane(getJContentPane());
 		this.setTitle("Ingatlan bérbeadási nyilvántartás");
@@ -386,9 +420,10 @@ public class MainFrame extends JFrame {
 			jContentPane = new JPanel();
 			jContentPane.setLayout(new BorderLayout());
 
+			jContentPane.add(getJTable(), BorderLayout.CENTER);
 		}
 
 		return jContentPane;
 	}
 
-}
+}  //  @jve:decl-index=0:visual-constraint="10,10"
