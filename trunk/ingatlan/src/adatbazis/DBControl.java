@@ -42,7 +42,7 @@ private void DBInit() throws Exception {
 		System.out.println( "Szerzodesekek szama: " + rs2.getString("db") );
 
 	} catch (Exception e)  {
-		stat.executeUpdate("create table szerzodes ( azonosito integer unsigned not null default auto_increment primary key, kezdete date, lejarat date, hosszabbitas1 tinyint unsigned not null, hosszabbitas2 tinyint unsigned not null, hosszabbites3 tinyint unsigned not null, felmondas_tipusa varchar(40), felmondas_indoka tinyint unsigned not null, felmondta tinyint unsigned not null, lakok_szama integer unsigned not null, berlo_azonosito integer unsigned not null, ingatlan_azonosito integer unsigned not null, foreign key (berlo_azonosito) references ugyfel(azonosito), foreign key (ingatlan_azonosito) references ingatlan(azonosito))");
+		stat.executeUpdate("create table szerzodes ( azonosito integer unsigned not null default auto_increment primary key, kezdete date, lejarat date, hosszabbitas1 tinyint unsigned not null, hosszabbitas2 tinyint unsigned not null, hosszabbitas3 tinyint unsigned not null, felmondas_tipusa varchar(40), felmondas_indoka tinyint unsigned not null, felmondta tinyint unsigned not null, lakok_szama integer unsigned not null, berlo_azonosito integer unsigned not null, ingatlan_azonosito integer unsigned not null, foreign key (berlo_azonosito) references ugyfel(azonosito), foreign key (ingatlan_azonosito) references ingatlan(azonosito))");
 		System.out.println("creat table szerzodes");
 	}
 }
