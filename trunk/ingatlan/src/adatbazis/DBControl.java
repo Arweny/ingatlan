@@ -90,6 +90,7 @@ private void DBInit() throws Exception {
 			Statement stat = conn.createStatement();
 			ResultSet rs = stat.executeQuery("SELECT max(azonosito) as id from " + db_name);
 			String id=rs.getString("id");
+			if (id == null) id = "0";
 			int i_id = Integer.valueOf(id).intValue();
 			if (i_id == 0) i_id = 1;
 			else i_id = i_id+1;
@@ -126,10 +127,11 @@ private void DBInit() throws Exception {
 			sb.append(values);
 			query = sb.toString();
 			System.out.println(query);
-			conn.setAutoCommit(false);
-			stat.executeUpdate(query);
-			conn.setAutoCommit(true);
-			stat.close();
+			Statement update = conn.createStatement();
+			//conn.setAutoCommit(false);
+			update.executeUpdate(query);
+			//conn.setAutoCommit(true);
+			update.close();
 
 		} else {
 			//van mar azonosito, frissites
