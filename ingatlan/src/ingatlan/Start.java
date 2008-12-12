@@ -84,7 +84,7 @@ public class Start {
 	private JScrollPane getJScrollPane() {
 		if (jScrollPane == null) {
 			jScrollPane = new JScrollPane();
-			jScrollPane.setBounds(new Rectangle(14, 7, 269, 130));
+			jScrollPane.setBounds(new Rectangle(1, 7, 269, 135));
 			jScrollPane.setViewportView(getJTable());
 		}
 		return jScrollPane;

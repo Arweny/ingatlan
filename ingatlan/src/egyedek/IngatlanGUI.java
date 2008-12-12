@@ -56,13 +56,14 @@ public class IngatlanGUI extends JFrame {
 	private JButton jButtonKovetkez = null;
 	private JButton jButtonElozo = null;
 	private JButton jButtonMentes = null;
-	private JButton jButtonMegsem = null;
+	private JButton jButtonKereses = null;
 
 	private DBControl dbc=null;  //  @jve:decl-index=0:
 	private JDialog jDialogErrorSave = null;  //  @jve:decl-index=0:visual-constraint="477,20"
 	private JPanel jContentPane1 = null;
 	private JLabel jLabel = null;
 	private JButton jButton = null;
+	private JButton jButtonTorles = null;
 	/**
 	 * This is the default constructor
 	 */
@@ -78,6 +79,7 @@ public class IngatlanGUI extends JFrame {
 	 */
 	private void initialize() {
 		this.setSize(450, 450);
+		this.setResizable(false);
 		this.setContentPane(getJContentPane());
 		this.setTitle("Ingatlan");
 
@@ -222,7 +224,8 @@ public class IngatlanGUI extends JFrame {
 			jContentPane.add(getJButtonKovetkez(), null);
 			jContentPane.add(getJButtonElozo(), null);
 			jContentPane.add(getJButtonMentes(), null);
-			jContentPane.add(getJButtonMegsem(), null);
+			jContentPane.add(getJButtonKereses(), null);
+			jContentPane.add(getJButtonTorles(), null);
 		}
 		return jContentPane;
 	}
@@ -481,8 +484,8 @@ public class IngatlanGUI extends JFrame {
 	private JButton getJButtonMentes() {
 		if (jButtonMentes == null) {
 			jButtonMentes = new JButton();
-			jButtonMentes.setBounds(new Rectangle(50, 380, 120, 30));
-			jButtonMentes.setBackground(new Color(238, 200, 200));
+			jButtonMentes.setBounds(new Rectangle(10, 380, 120, 30));
+			jButtonMentes.setBackground(new Color(200, 238, 200));
 			jButtonMentes.setText("Mentés");
 			jButtonMentes.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -502,22 +505,22 @@ public class IngatlanGUI extends JFrame {
 	}
 
 	/**
-	 * This method initializes jButtonMegsem
+	 * This method initializes jButtonKereses
 	 *
 	 * @return javax.swing.JButton
 	 */
-	private JButton getJButtonMegsem() {
-		if (jButtonMegsem == null) {
-			jButtonMegsem = new JButton();
-			jButtonMegsem.setBounds(new Rectangle(280, 380, 120, 30));
-			jButtonMegsem.setText("Mégsem");
-			jButtonMegsem.addActionListener(new java.awt.event.ActionListener() {
+	private JButton getJButtonKereses() {
+		if (jButtonKereses == null) {
+			jButtonKereses = new JButton();
+			jButtonKereses.setBounds(new Rectangle(160, 380, 120, 30));
+			jButtonKereses.setText("Keresés");
+			jButtonKereses.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				}
 			});
 		}
-		return jButtonMegsem;
+		return jButtonKereses;
 	}
 
 	/**
@@ -575,6 +578,21 @@ public class IngatlanGUI extends JFrame {
 			});
 		}
 		return jButton;
+	}
+
+	/**
+	 * This method initializes jButtonTorles
+	 *
+	 * @return javax.swing.JButton
+	 */
+	private JButton getJButtonTorles() {
+		if (jButtonTorles == null) {
+			jButtonTorles = new JButton();
+			jButtonTorles.setBounds(new Rectangle(310, 380, 120, 30));
+			jButtonTorles.setBackground(new Color(238, 200, 200));
+			jButtonTorles.setText("Törlés");
+		}
+		return jButtonTorles;
 	}
 
 }  //  @jve:decl-index=0:visual-constraint="14,17"
