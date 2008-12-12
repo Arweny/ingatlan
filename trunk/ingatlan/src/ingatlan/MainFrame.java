@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+import javax.swing.JDialog;
+import java.awt.Dimension;
+import javax.swing.JInternalFrame;
 
 
 
@@ -33,6 +36,10 @@ public class MainFrame extends JFrame {
 	private JMenuItem jMenuItem6 = null;
 	private JMenu jMenu1 = null;
 	private JMenuItem jMenuItem7 = null;
+	private JDialog jDialogNevjegy = null;  //  @jve:decl-index=0:visual-constraint="840,16"
+	private JPanel jContentPane1 = null;
+	private JInternalFrame jInternalFrame = null;
+	private JPanel jContentPane2 = null;
 	/**
 	 * This method initializes mainMenu
 	 *
@@ -271,6 +278,68 @@ public class MainFrame extends JFrame {
 
 
 	/**
+	 * This method initializes jDialogNevjegy
+	 *
+	 * @return javax.swing.JDialog
+	 */
+	private JDialog getJDialogNevjegy() {
+		if (jDialogNevjegy == null) {
+			jDialogNevjegy = new JDialog(this);
+			jDialogNevjegy.setSize(new Dimension(300, 190));
+			jDialogNevjegy.setTitle("Névjegy");
+			jDialogNevjegy.setContentPane(getJContentPane1());
+		}
+		return jDialogNevjegy;
+	}
+
+
+	/**
+	 * This method initializes jContentPane1
+	 *
+	 * @return javax.swing.JPanel
+	 */
+	private JPanel getJContentPane1() {
+		if (jContentPane1 == null) {
+			BorderLayout borderLayout = new BorderLayout();
+			borderLayout.setHgap(5);
+			borderLayout.setVgap(5);
+			jContentPane1 = new JPanel();
+			jContentPane1.setLayout(borderLayout);
+			jContentPane1.add(getJInternalFrame(), BorderLayout.CENTER);
+		}
+		return jContentPane1;
+	}
+
+
+	/**
+	 * This method initializes jInternalFrame
+	 *
+	 * @return javax.swing.JInternalFrame
+	 */
+	private JInternalFrame getJInternalFrame() {
+		if (jInternalFrame == null) {
+			jInternalFrame = new JInternalFrame();
+			jInternalFrame.setContentPane(getJContentPane2());
+		}
+		return jInternalFrame;
+	}
+
+
+	/**
+	 * This method initializes jContentPane2
+	 *
+	 * @return javax.swing.JPanel
+	 */
+	private JPanel getJContentPane2() {
+		if (jContentPane2 == null) {
+			jContentPane2 = new JPanel();
+			jContentPane2.setLayout(new BorderLayout());
+		}
+		return jContentPane2;
+	}
+
+
+	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -316,6 +385,7 @@ public class MainFrame extends JFrame {
 		if (jContentPane == null) {
 			jContentPane = new JPanel();
 			jContentPane.setLayout(new BorderLayout());
+
 		}
 
 		return jContentPane;
