@@ -491,8 +491,8 @@ public class IngatlanGUI extends JFrame {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("Ingatlan mentés");
 					try {
-						//dbc.SaveData(getIngatlanFieldVector(), "ingatlan");
-						dbc.DBSaveIngatlan( getIngatlanFieldVector() );
+						dbc.addItem(getIngatlanFieldVector(), "ingatlan");
+						//dbc.DBSaveIngatlan( getIngatlanFieldVector() );
 					} catch (Exception ex) {
 						System.out.println("Print Stack Trace:");
 						ex.printStackTrace();
