@@ -403,7 +403,7 @@ public class SzerzodesGUI extends JFrame {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					System.out.println("Szerződes mentés");
 					try {
-						dbc.SaveData(getSzerzodesFieldVector(), m_tablename);
+						dbc.addItem(getSzerzodesFieldVector(), m_tablename);
 					} catch (Exception ex) {
 						System.out.println("Print Stack Trace:");
 						ex.printStackTrace();

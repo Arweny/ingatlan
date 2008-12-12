@@ -1,6 +1,8 @@
 package egyedek;
 
 import java.util.Vector;
+
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,7 +40,8 @@ public class UgyfelGUI extends JFrame {
 	private JLabel jLabelAnyjaNeve = null;
 	private JTextField jTextFieldAnyjaNeve = null;
 	private JLabel jLabelCsaladiAllapota = null;
-	private JTextField jTextFieldCsaladiAllapota = null;
+	private JComboBox jComboBoxCsaladiAllapota = null;
+	//private JTextField jTextFieldCsaladiAllapota = null;
 	private JButton jButtonKovetkez = null;
 	private JButton jButtonElozo = null;
 	private JButton jButtonMentes = null;
@@ -49,7 +52,7 @@ public class UgyfelGUI extends JFrame {
 	private JPanel jContentPane1 = null;
 	private JLabel jLabel = null;
 	private JButton jButton = null;
-	private String m_tablename = "szerzodes";
+	private String m_tablename = "ugyfel";
 
 	/**
 	 * This is the default constructor
@@ -98,7 +101,8 @@ public class UgyfelGUI extends JFrame {
 		data.add("anyja_neve");
 		data.add( getJTextFieldAnyjaNeve().getText() );
 		data.add("csaladi_allapota");
-		data.add( getJTextFieldCsaladiAllapota().getText() );
+		data.add( (String) getJComboBoxCsaladiAllapota().getSelectedItem());
+		//data.add( getJTextFieldCsaladiAllapota().getText() );
 		return data;
 	};
 
@@ -157,7 +161,8 @@ public class UgyfelGUI extends JFrame {
 			jContentPane.add(jLabelAnyjaNeve, null);
 			jContentPane.add(getJTextFieldAnyjaNeve(), null);
 			jContentPane.add(jLabelCsaladiAllapota, null);
-			jContentPane.add(getJTextFieldCsaladiAllapota(), null);
+			jContentPane.add(getJComboBoxCsaladiAllapota(), null);
+			//jContentPane.add(getJTextFieldCsaladiAllapota(), null);
 			jContentPane.add(getJButtonKovetkez(), null);
 			jContentPane.add(getJButtonElozo(), null);
 			jContentPane.add(getJButtonMentes(), null);
@@ -174,7 +179,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldAzonosito() {
 		if (jTextFieldAzonosito == null) {
 			jTextFieldAzonosito = new JTextField();
-			jTextFieldAzonosito.setBounds(new Rectangle(140, 49, 100, 20));
+			jTextFieldAzonosito.setBounds(new Rectangle(140, 49, 150, 20));
 		}
 		return jTextFieldAzonosito;
 	}
@@ -187,7 +192,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldSzigSzam() {
 		if (jTextFieldSzigSzam == null) {
 			jTextFieldSzigSzam = new JTextField();
-			jTextFieldSzigSzam.setBounds(new Rectangle(140, 69, 100, 20));
+			jTextFieldSzigSzam.setBounds(new Rectangle(140, 69, 150, 20));
 		}
 		return jTextFieldSzigSzam;
 	}
@@ -200,7 +205,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldVezetekNev() {
 		if (jTextFieldVezetekNev == null) {
 			jTextFieldVezetekNev = new JTextField();
-			jTextFieldVezetekNev.setBounds(new Rectangle(140, 89, 100, 20));
+			jTextFieldVezetekNev.setBounds(new Rectangle(140, 89, 150, 20));
 		}
 		return jTextFieldVezetekNev;
 	}
@@ -213,7 +218,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldKeresztNev() {
 		if (jTextFieldKeresztNev == null) {
 			jTextFieldKeresztNev = new JTextField();
-			jTextFieldKeresztNev.setBounds(new Rectangle(140, 109, 100, 20));
+			jTextFieldKeresztNev.setBounds(new Rectangle(140, 109, 150, 20));
 		}
 		return jTextFieldKeresztNev;
 	}
@@ -226,7 +231,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldLeanykoriNev() {
 		if (jTextFieldLeanykoriNev == null) {
 			jTextFieldLeanykoriNev = new JTextField();
-			jTextFieldLeanykoriNev.setBounds(new Rectangle(140, 129, 100, 20));
+			jTextFieldLeanykoriNev.setBounds(new Rectangle(140, 129, 150, 20));
 		}
 		return jTextFieldLeanykoriNev;
 	}
@@ -239,7 +244,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldSzuletesiHely() {
 		if (jTextFieldSzuletesiHely == null) {
 			jTextFieldSzuletesiHely = new JTextField();
-			jTextFieldSzuletesiHely.setBounds(new Rectangle(140, 149, 100, 20));
+			jTextFieldSzuletesiHely.setBounds(new Rectangle(140, 149, 150, 20));
 		}
 		return jTextFieldSzuletesiHely;
 	}
@@ -252,7 +257,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldSzuletesiIdo() {
 		if (jTextFieldSzuletesiIdo == null) {
 			jTextFieldSzuletesiIdo = new JTextField();
-			jTextFieldSzuletesiIdo.setBounds(new Rectangle(140, 169, 100, 20));
+			jTextFieldSzuletesiIdo.setBounds(new Rectangle(140, 169, 150, 20));
 		}
 		return jTextFieldSzuletesiIdo;
 	}
@@ -265,7 +270,7 @@ public class UgyfelGUI extends JFrame {
 	private JTextField getJTextFieldAnyjaNeve() {
 		if (jTextFieldAnyjaNeve == null) {
 			jTextFieldAnyjaNeve = new JTextField();
-			jTextFieldAnyjaNeve.setBounds(new Rectangle(140, 189, 100, 20));
+			jTextFieldAnyjaNeve.setBounds(new Rectangle(140, 189, 150, 20));
 		}
 		return jTextFieldAnyjaNeve;
 	}
@@ -274,13 +279,29 @@ public class UgyfelGUI extends JFrame {
 	 * This method initializes jTextFieldCsaladiAllapota
 	 *
 	 * @return javax.swing.JTextField
-	 */
+
 	private JTextField getJTextFieldCsaladiAllapota() {
 		if (jTextFieldCsaladiAllapota == null) {
 			jTextFieldCsaladiAllapota = new JTextField();
 			jTextFieldCsaladiAllapota.setBounds(new Rectangle(140, 209, 100, 20));
 		}
 		return jTextFieldCsaladiAllapota;
+	}
+	*/
+	/**
+	 * This method initializes jComboBox
+	 *
+	 * @return javax.swing.JComboBox
+	 */
+	private JComboBox getJComboBoxCsaladiAllapota() {
+		if (jComboBoxCsaladiAllapota == null) {
+			jComboBoxCsaladiAllapota = new JComboBox();
+			jComboBoxCsaladiAllapota.addItem("hajadon, nőtlen");
+			jComboBoxCsaladiAllapota.addItem("házas");
+			jComboBoxCsaladiAllapota.addItem("elvállt, özvegy");
+			jComboBoxCsaladiAllapota.setBounds(new Rectangle(140, 209, 150, 20));
+		}
+		return jComboBoxCsaladiAllapota;
 	}
 
 	/**
@@ -334,9 +355,9 @@ public class UgyfelGUI extends JFrame {
 			jButtonMentes.setText("Mentés");
 			jButtonMentes.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					System.out.println("Szerződes mentés");
+					System.out.println("Ügyfél mentés");
 					try {
-						dbc.SaveData(getSzerzodesFieldVector(), m_tablename);
+						dbc.addItem(getSzerzodesFieldVector(), m_tablename);
 					} catch (Exception ex) {
 						System.out.println("Print Stack Trace:");
 						ex.printStackTrace();
